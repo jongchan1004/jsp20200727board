@@ -100,7 +100,13 @@ public class ControllerUsingURI extends HttpServlet {
 		//System.out.println("command: "+command); //command: /a/some.do
 		
 		CommandHandler com = map.get(command);
-		String view = com.process(request, response);
+		String view = null;
+		try {
+			view = com.process(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		//request.setAttribute("result", view);
 		if (view != null) {

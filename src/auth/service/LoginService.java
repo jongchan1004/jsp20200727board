@@ -22,6 +22,7 @@ public class LoginService {
 			}
 			return new User(member.getId(), member.getName());
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}

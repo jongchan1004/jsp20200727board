@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="u" tagdir="/WEB-INF/tags" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,20 +13,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<title>회원제 게시판 예제</title>
+<title>암호 변경</title>
 </head>
 <body>
 
-<u:isLogin>
-	CT: ${authUser.name }님, 안녕하세요.
-	<a href="logout.do">[로그아웃하기]</a>
-	<a href="changePwd.do">[암호변경하기]</a>
-</u:isLogin>
-<u:notLogin>
-	CT: <a href="join.do">[회원가입하기]</a>
-	<a href="login.do">[로그인하기]</a>
-</u:notLogin>
-<br />
+<form action="changePwd.do" method="post">
+<p>
+	현재 암호: <br /> <input type="password" name="curPwd"/>
+	<c:if test="${errors.curPwd }">현재 암호를 입력하세요.</c:if>
+	<c:if test="${errors.badCurPwd }">현재 암호가 일치하지 않습니다.</c:if>
+</p>
+<p>
+	새 함호: <br /> <input type="password" name="newPwd"/>
+	<c:if test="${errors.newPwd }">새 함호를 입력하세요.</c:if>
+</p>
+<input type="submit" value="암호 변경"/>
+</form>
 
 </body>
 </html>

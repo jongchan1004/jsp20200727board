@@ -5,6 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface CommandHandler {
 	
-	public String process(HttpServletRequest request, HttpServletResponse response);
+	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception;
 
 }
