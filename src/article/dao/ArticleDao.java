@@ -120,4 +120,17 @@ public class ArticleDao {
 			return pstmt.executeUpdate();
 		}
 	}
+	
+	public int deleteById(Connection conn, int no) throws SQLException {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		try {
+			pstmt = conn.prepareStatement("delete from article where article_no = ?");
+			pstmt.setInt(1, no);
+			result = pstmt.executeUpdate();
+			return result;
+		} finally {
+			JdbcUtil.close(pstmt);
+		}
+	}
 }
