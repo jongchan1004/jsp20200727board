@@ -16,7 +16,7 @@
 <title>가입</title>
 </head>
 <body>
-
+<div class="container pt-5">
 <form action="join.do" method="post">
 <p>
 	아이디: <br /><input type="text" name="id" value="${param.id }"/>
@@ -38,6 +38,6 @@
 </p>
 <input type="submit" value="가입"/>
 </form>
-
+</div>
 </body>
 </html>

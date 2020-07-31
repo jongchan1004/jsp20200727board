@@ -18,7 +18,7 @@
 <title>회원제 게시판 예제</title>
 </head>
 <body>
-
+<div class="container pt-5">
 <u:isLogin>
 	CT: ${authUser.name }님, 안녕하세요.
 	<a href="logout.do">[로그아웃하기]</a>
@@ -33,6 +33,7 @@
 	<a href="login.do">[로그인하기]</a>
 </u:notLogin>
 <br />
-
+<%-- <div><img src="/images/bird.jpg" alt="" /></div> --%>
+</div>
 </body>
 </html>

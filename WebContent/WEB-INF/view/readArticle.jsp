@@ -17,8 +17,8 @@
 <title>게시글 읽기</title>
 </head>
 <body>
-
-<table border="1" width="100%">
+<div class="container pt-5">
+<table border="1" width="100%" style="text-align:center;">
 <tr>
 	<td>번호</td>
 	<td>${articleData.article.number }</td>
@@ -32,9 +32,15 @@
 	<td><c:out value="${articleData.article.title }"/></td>
 </tr>
 <tr>
-	<td>내용</td>
-	<%--<td style="white-space: pre-wrap;"><c:out value="${articleData.content }"/></td>--%>
-	<td><u:pre value="${articleData.content }"/></td>
+<td>내용</td>
+<td style="white-space: pre-wrap;">
+<c:out value="${articleData.content }"/>
+<c:if test="${not empty articleData.fileName}">
+<a href="/images/${articleData.article.number }/${articleData.fileName}">${articleData.fileName}</a>
+<%-- <img src="/images/${articleData.article.number }/${articleData.fileName}" alt="" /> --%>
+</c:if>
+</td>
+<%--<td><u:pre value="${articleData.content }"/></td>--%>
 </tr>
 <tr>
 	<td colspan="2">
@@ -43,10 +49,11 @@
 		<c:if test="${authUser.id == articleData.article.writer.id }">
 		<a href="modify.do?no=${articleData.article.number }">[게시글수정]</a>
 		<a href="delete.do?no=${articleData.article.number }">[게시글삭제]</a>
+		<a href="deleteT.do?no=${articleData.article.number }">[게시글삭제(강사)]</a>
 		</c:if>
 	</td>
 </tr>
 </table>
-
+</div>
 </body>
 </html>

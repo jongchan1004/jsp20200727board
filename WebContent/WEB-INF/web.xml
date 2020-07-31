@@ -50,6 +50,7 @@
     <url-pattern>/article/write.do</url-pattern>
     <url-pattern>/article/modify.do</url-pattern>
     <url-pattern>/article/delete.do</url-pattern>
+    <url-pattern>/article/deleteT.do</url-pattern>
   </filter-mapping>  
   
   <servlet>
@@ -60,6 +61,7 @@
       <param-value>/WEB-INF/commandHandlerURI.properties</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
+    <multipart-config></multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>ControllerUsingURI</servlet-name>

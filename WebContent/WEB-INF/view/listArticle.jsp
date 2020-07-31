@@ -16,8 +16,8 @@
 <title>게시글 목록</title>
 </head>
 <body>
-
-<table border="1">
+<div class="container pt-5">
+<table border="1" width="100%" style="text-align:center;">
 	<tr>
 		<td colspan="4"><a href="write.do">[게시글쓰기]</a></td>
 	</tr>
@@ -61,6 +61,6 @@
 </c:if>
 </table>
 <a href="${ctxPath }/logout.do">[로그아웃하기]</a>
-
+</div>
 </body>
 </html>

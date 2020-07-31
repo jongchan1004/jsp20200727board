@@ -16,7 +16,7 @@
 <title>게시글 삭제</title>
 </head>
 <body>
-
+<div class="container pt-5">
 <%--
 <form action="delete.do" method="post"> 
 <p>
@@ -42,8 +42,12 @@
 		<input type="number" name="no" readonly="readonly" value="${delReq.articleNumber }" hidden />
 		<br />
 		<input class="btn btn-primary" type="submit" value="  예    "/>
-		<a class="btn btn-primary" href="${ctxPath }/article/list.do">아니오</a>
+		<%-- <a class="btn btn-primary" href="${ctxPath }/article/list.do">아니오</a> --%>
+		<%-- <a class="btn btn-primary" href="read.do?no=${delReq.articleNumber }">아니오</a> --%>
+		<%-- <button class="btn btn-primary" type="button" onclick="history.back()">아니오</button> --%>
+		<button class="btn btn-primary" type="button" onclick="history.go(-1)">아니오</button>
 	</div>
 </form>
+</div>
 </body>
 </html>

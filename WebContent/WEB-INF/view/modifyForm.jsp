@@ -16,21 +16,21 @@
 <title>게시글 수정</title>
 </head>
 <body>
-
+<div class="container pt-5">
 <form action="modify.do?no=${modReq.articleNumber }" method="post">
 <p>
-	번호: <br /> ${modReq.articleNumber }
+	번호: <br /> <p style="text-align:center; width:100%;">${modReq.articleNumber }</p>
 	<%-- <input type="number" name="no" readonly="readonly" value="${modReq.articleNumber }" hidden/>--%>
 </p>
 <p>
-	제목: <br /><input type="text" name="title" value="${modReq.title }"/>
+	제목: <br /><input type="text" name="title" value="${modReq.title }" style="text-align:center; width:100%;"/>
 	<c:if test="${errors.title }">제목을 입력하세요.</c:if>
 </p>
 <p>
-	내용: <br /><textarea name="content" cols="30" rows="5">${modReq.content }</textarea>
+	내용: <br /><textarea name="content" cols="30" rows="5" style="text-align:center; width:100%;">${modReq.content }</textarea>
 </p>
 <input type="submit" value="글 수정"/>
 </form>
-
+</div>
 </body>
 </html>

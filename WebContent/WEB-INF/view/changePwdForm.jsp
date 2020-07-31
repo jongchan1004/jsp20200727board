@@ -16,7 +16,7 @@
 <title>암호 변경</title>
 </head>
 <body>
-
+<div class="container pt-5">
 <form action="changePwd.do" method="post">
 <p>
 	현재 암호: <br /> <input type="password" name="curPwd"/>
@@ -29,6 +29,6 @@
 </p>
 <input type="submit" value="암호 변경"/>
 </form>
-
+</div>
 </body>
 </html>

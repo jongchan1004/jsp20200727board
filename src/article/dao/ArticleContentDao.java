@@ -14,9 +14,10 @@ public class ArticleContentDao {
 	public ArticleContent insert(Connection conn, ArticleContent content) throws SQLException {
 		PreparedStatement pstmt = null;
 		try {
-			pstmt = conn.prepareStatement("insert into article_content (article_no, content) values (?,?)");
+			pstmt = conn.prepareStatement("insert into article_content (article_no, content, file_name) values (?,?,?)");
 			pstmt.setLong(1, content.getNumber());
 			pstmt.setString(2, content.getContent());
+			pstmt.setString(3, content.getFileName());
 			int insertedCount = pstmt.executeUpdate();
 			if (insertedCount > 0) {
 				return content;
@@ -37,7 +38,7 @@ public class ArticleContentDao {
 			rs = pstmt.executeQuery();
 			ArticleContent content = null;
 			if (rs.next()) {
-				content = new ArticleContent(rs.getInt("article_no"), rs.getString("content"));
+				content = new ArticleContent(rs.getInt("article_no"), rs.getString("content"), rs.getString("file_name"));
 			}
 			return content;
 		} finally {

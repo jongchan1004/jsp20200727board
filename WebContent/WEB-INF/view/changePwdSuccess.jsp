@@ -16,10 +16,10 @@
 <title>암호 변경</title>
 </head>
 <body>
-
+<div class="container pt-5">
 암호를 변경했습니다.
 <br />
 <a href="${ctxPath }/index.jsp">[index page]</a>
-
+</div>
 </body>
 </html>

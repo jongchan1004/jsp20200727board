@@ -16,12 +16,12 @@
 <title>게시글 수정</title>
 </head>
 <body>
-
+<div class="container pt-5">
 게시글을 삭제했습니다.
 <br />
 <%-- ${ctxPath = pageContext.request.contextPath ; '' }--%>
 <a href="${ctxPath }/article/list.do">[게시글목록보기]</a>
 <a href="${ctxPath }/article/read.do?no=${delReq.articleNumber}">[게시글내용보기]</a>
-
+</div>
 </body>
 </html>
